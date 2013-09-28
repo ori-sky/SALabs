@@ -3,7 +3,7 @@ package com.shockk.SALabs.unit1;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CalculatorTestV1
+public class CalculatorTest
 {
 	protected static List<IOperation> operations = new ArrayList<IOperation>();
 	
