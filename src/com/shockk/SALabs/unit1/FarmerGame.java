@@ -26,6 +26,18 @@ public class FarmerGame
 		}
 	}
 	
+	public void run()
+	{
+		for(boolean running=true; running==true;)
+		{
+			this.print_state();
+			this.print_options();
+			this.process_input();
+			if(this.check_fail()) running = false;
+			if(this.check_win()) running = false;
+		}
+	}
+	
 	public void print_state()
 	{
 		StringBuilder sb = new StringBuilder();
@@ -85,6 +97,33 @@ public class FarmerGame
 		}
 
 		System.out.println("Invalid option.");
+	}
+	
+	public boolean check_fail()
+	{
+		for(int i=0; i<this.entity_banks.length-1; ++i)
+		{
+			if(this.entity_banks[i] == this.entity_banks[i + 1] && this.entity_banks[i] != this.farmer_bank)
+			{
+				System.out.println("You failed! The " + Entity.values()[i] + " ate the " + Entity.values()[i + 1] + "!");
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	public boolean check_win()
+	{
+		for(int i=0; i<this.entity_banks.length; ++i)
+		{
+			if(this.entity_banks[i] == Bank.Left) return false; 
+		}
+		
+		StringBuilder sb = new StringBuilder();
+		this.get_entity_banks_sb(sb);
+		System.out.println("You won! The " + sb + " made it across the river to the " + Bank.Right + " bank!");
+		return true;
 	}
 	
 	public Bank toggle_bank(Bank bank)
