@@ -12,7 +12,7 @@ public class FarmerTest
 			System.out.println("|________|");
 			
 			FarmerGame game = new FarmerGame();
-			game.run();
+			if(!game.run()) break;
 			
 			try
 			{

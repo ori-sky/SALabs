@@ -26,16 +26,18 @@ public class FarmerGame
 		}
 	}
 	
-	public void run()
+	public boolean run()
 	{
-		for(boolean running=true; running==true;)
+		for(;;)
 		{
 			this.print_state();
 			this.print_options();
-			this.process_input();
-			if(this.check_fail()) running = false;
-			if(this.check_win()) running = false;
+			if(this.process_input()) return false;
+			if(this.check_fail()) break;
+			if(this.check_win()) break;
 		}
+		
+		return true;
 	}
 	
 	public void print_state()
@@ -51,6 +53,7 @@ public class FarmerGame
 	
 	public void print_options()
 	{
+		System.out.println("0: Give up.");
 		System.out.println("1: Cross the river to the " + toggle_bank(this.farmer_bank) + " bank.");
 		
 		int n = 2;
@@ -64,9 +67,9 @@ public class FarmerGame
 		}
 	}
 	
-	public void process_input()
+	public boolean process_input()
 	{
-		int input = 0;
+		Integer input = null;
 		
 		try
 		{
@@ -74,11 +77,17 @@ public class FarmerGame
 		}
 		catch(Exception e) {}
 		
+		if(input == null) return false;
 		
-		if(input == 1)
+		if(input == 0)
+		{
+			System.out.println("You gave up.");
+			return true;
+		}
+		else if(input == 1)
 		{
 			this.farmer_bank = toggle_bank(this.farmer_bank);
-			return;
+			return false;
 		}
 		
 		int n = 2;
@@ -91,12 +100,13 @@ public class FarmerGame
 				{
 					this.farmer_bank = toggle_bank(this.farmer_bank);
 					this.entity_banks[i] = toggle_bank(this.entity_banks[i]);
-					return;
+					return false;
 				}
 			}
 		}
 
 		System.out.println("Invalid option.");
+		return false;
 	}
 	
 	public boolean check_fail()
