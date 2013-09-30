@@ -4,12 +4,18 @@ public class FarmerTest
 {
 	public static void main(String[] args)
 	{
-		System.out.println(" Farmer ");
-		System.out.println(" v0.0.1 ");
-		System.out.println("--------");
-		System.out.println();
+		System.out.println(" ________ ");
+		System.out.println("|        |");
+		System.out.println("| Farmer |");
+		System.out.println("|________|");
 		
 		FarmerGame game = new FarmerGame();
-		game.print_state();
+		
+		for(boolean running=true; running==true;)
+		{
+			game.print_state();
+			game.print_options();
+			game.process_input();
+		}
 	}
 }
