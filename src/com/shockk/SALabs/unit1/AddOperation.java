@@ -5,7 +5,15 @@ public class AddOperation implements IOperation
 	@Override
 	public Object operate()
 	{
-		return Input.get_double("first: ") + Input.get_double("second: ");
+		Double value = null;
+		
+		try
+		{
+			value = Input.get_double("first: ") + Input.get_double("second: ");
+		}
+		catch(Exception e) {}
+		
+		return value;
 	}
 	
 	@Override

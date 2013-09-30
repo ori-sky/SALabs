@@ -27,49 +27,19 @@ public class Input
 	
 	public static Character get_char(String prompt)
 	{
-		Character value = null;
-		
-		try
-		{
-			value = Input.get_string(prompt).charAt(0);
-		}
-		catch(StringIndexOutOfBoundsException e)
-		{
-			e.printStackTrace();
-		}
-		
+		Character value = Input.get_string(prompt).charAt(0);
 		return value;
 	}
 	
 	public static Double get_double(String prompt)
 	{
-		Double value = null;
-		
-		try
-		{
-			value = Double.parseDouble(Input.get_string(prompt));
-		}
-		catch (NumberFormatException e)
-		{
-			e.printStackTrace();
-		}
-		
+		Double value = Double.parseDouble(Input.get_string(prompt));
 		return value;
 	}
 	
 	public static Integer get_int(String prompt)
 	{
-		Integer value = null;
-		
-		try
-		{
-			value = Integer.parseInt(Input.get_string(prompt));
-		}
-		catch (NumberFormatException e)
-		{
-			e.printStackTrace();
-		}
-		
+		Integer value = Integer.parseInt(Input.get_string(prompt));
 		return value;
 	}
 }

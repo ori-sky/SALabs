@@ -27,7 +27,13 @@ public class CalculatorTest
 				System.out.println((i + 1) + ": " + operations.get(i).toString());
 			}
 			
-			Integer c = Input.get_int("Option: ");
+			Integer c = null;
+			
+			try
+			{
+				c = Input.get_int("> ");
+			}
+			catch(Exception e) {}
 			if(c == null) continue;
 			
 			switch(c)

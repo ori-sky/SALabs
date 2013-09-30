@@ -5,7 +5,15 @@ public class IntDivideOperation implements IOperation
 	@Override
 	public Object operate()
 	{
-		return Input.get_int("first: ") / Input.get_int("second: ");
+		Integer value = null;
+		
+		try
+		{
+			value = Input.get_int("first: ") / Input.get_int("second: ");
+		}
+		catch(Exception e) {}
+		
+		return value;
 	}
 	
 	@Override
