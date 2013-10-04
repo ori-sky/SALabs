@@ -73,7 +73,7 @@ public class FarmerGame
 		
 		try
 		{
-			input = Input.get_int("> ");
+			input = Input.getInt("> ");
 		}
 		catch(Exception e) {}
 		

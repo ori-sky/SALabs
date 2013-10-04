@@ -9,7 +9,7 @@ public class AddOperation implements IOperation
 		
 		try
 		{
-			value = Input.get_double("first: ") + Input.get_double("second: ");
+			value = Input.getDouble("first: ") + Input.getDouble("second: ");
 		}
 		catch(Exception e) {}
 		

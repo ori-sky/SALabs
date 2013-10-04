@@ -8,7 +8,7 @@ public class TextTest
 		
 		while(input == null || !input.equalsIgnoreCase("no"))
 		{
-			input = Input.get_string("Input: ");
+			input = Input.getString("Input: ");
 			String[] words = input.split(" ");
 			
 			for(String word : words)

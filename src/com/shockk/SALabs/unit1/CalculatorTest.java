@@ -31,7 +31,7 @@ public class CalculatorTest
 			
 			try
 			{
-				c = Input.get_int("> ");
+				c = Input.getInt("> ");
 			}
 			catch(Exception e) {}
 			if(c == null) continue;

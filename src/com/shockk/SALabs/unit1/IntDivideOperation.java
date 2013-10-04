@@ -9,7 +9,7 @@ public class IntDivideOperation implements IOperation
 		
 		try
 		{
-			value = Input.get_int("first: ") / Input.get_int("second: ");
+			value = Input.getInt("first: ") / Input.getInt("second: ");
 		}
 		catch(Exception e) {}
 		
