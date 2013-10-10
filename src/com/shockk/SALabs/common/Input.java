@@ -1,4 +1,4 @@
-package com.shockk.SALabs.unit1;
+package com.shockk.SALabs.common;
 
 import java.io.BufferedReader;
 import java.io.IOException;

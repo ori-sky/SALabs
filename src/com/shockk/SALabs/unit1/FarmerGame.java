@@ -1,5 +1,7 @@
 package com.shockk.SALabs.unit1;
 
+import com.shockk.SALabs.common.Input;
+
 public class FarmerGame
 {
 	public enum Bank

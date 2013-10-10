@@ -3,6 +3,8 @@ package com.shockk.SALabs.unit2;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.shockk.SALabs.common.Input;
+
 public class Marks
 {
 	public static final int NUM_RESULTS = 6;

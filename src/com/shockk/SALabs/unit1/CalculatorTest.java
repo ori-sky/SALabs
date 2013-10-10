@@ -3,6 +3,8 @@ package com.shockk.SALabs.unit1;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.shockk.SALabs.common.Input;
+
 public class CalculatorTest
 {
 	protected static List<IOperation> operations = new ArrayList<IOperation>();

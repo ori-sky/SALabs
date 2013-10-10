@@ -1,5 +1,7 @@
 package com.shockk.SALabs.unit2;
 
+import com.shockk.SALabs.common.Input;
+
 public class PostCodeTest
 {
 	public static void main(String[] args)
